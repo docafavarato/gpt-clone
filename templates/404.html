@@ -1,0 +1,14 @@
+{% extends "index.html" %}>
+{% block title %}Página não encontrada{% endblock %}
+{% block body %}
+    {{ super ()}}
+    <div class="container">
+        <center>
+            <h1>Oops! Parece que essa página não existe.</h1>
+            <a href="{{ url_for('index') }}"><p>Clique aqui</a> para voltar para a página inicial</p>
+        </center>
+    </div>  
+{% endblock %}
+{% block footer %}
+
+{% endblock %}
