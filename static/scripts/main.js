@@ -1,13 +1,28 @@
 $(document).ready(function() {
-    var answer = $("#answer");
-    var answerText = answer.text();
+    var answer = $(".container-answer");
+    var answerText = answer.html();
     answer.empty();
     var i = 0;
     var typingEffect = setInterval(function() {
-        answer.append(answerText.charAt(i));
+        answer.html("<p>" + answerText.substr(0, i) + "</p>");
         i++;
         if (i > answerText.length) {
             clearInterval(typingEffect);
         }
-    }, 15);
+    }, 10);
+});
+
+
+$(document).ready(function() {
+    $('body').on('click', '#clipboard', function(event) {
+        event.stopPropagation(); 
+
+        console.log("Clicado!");
+
+        var answerText = document.getElementById("answerText");
+
+        navigator.clipboard.writeText(answerText.innerText)
+            .then(() => console.log("Texto copiado para a área de transferência"))
+            .catch(err => console.error("Erro ao copiar o texto: ", err));
+    });
 });

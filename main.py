@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, url_for
 from models import ask, create_image, retrieve_images
 
 app = Flask(__name__)
+app.jinja_env.autoescape = False
 
 @app.route('/')
 def index():

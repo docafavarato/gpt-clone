@@ -2,8 +2,12 @@
 {% block footer %}
 {{ super() }}
 <div class="answerContainer d-flex justify-content-center align-items-center">
-    <div class="container">
-        <p id="answer">{{ answer }}</p>
+    <div class="container-answer container" id="answerText">
+        <i class="fa-regular fa-clipboard" id="clipboard"></i>
+            {% for line in answer.split('\n') %}
+                {{ line }}
+                <br/>
+            {% endfor %}
     </div>
 </div>
 {% endblock %}
