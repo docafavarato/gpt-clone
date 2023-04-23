@@ -3,7 +3,7 @@ from datetime import datetime
 import urllib.request
 import os
 
-openai.api_key = "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"
+openai.api_key = "YOUR_API_KEY"
 def ask(question):
     completions = openai.Completion.create(
         engine="text-davinci-003",
