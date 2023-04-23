@@ -5,7 +5,14 @@
         <div class="row d-flex justify-content-between">
             {% for image in images %}
                 <div class="col-md-3">
-                    <a href="static/generated_images/{{ image }}"><img src="static/generated_images/{{ image }}" class="img-fluid"></a>
+                    <div class="image-container">
+                        <a href="static/generated_images/{{ images[image][0] }}">
+                            <img src="static/generated_images/{{ images[image][0] }}" class="img-fluid image" alt="{{ images[image][1] }}">
+                            <div class="overlay">
+                                <div class="text">{{ images[image][1] }}</div>
+                            </div>
+                        </a>
+                    </div>
                 </div>
             {% endfor %}
         </div>
