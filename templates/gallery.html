@@ -1,0 +1,14 @@
+{% extends "images.html" %}
+{% block footer %}
+<div class="answerContainer d-flex justify-content-center align-items-center">
+    <div class="container">
+        <div class="row d-flex justify-content-between">
+            {% for image in images %}
+                <div class="col-md-3">
+                    <a href="static/generated_images/{{ image }}"><img src="static/generated_images/{{ image }}" class="img-fluid"></a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

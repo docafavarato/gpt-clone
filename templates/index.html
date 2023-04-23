@@ -24,6 +24,9 @@
               <li class="nav-item">
                 <a class="nav-link" href="{{ url_for('index_images') }}">Imagens</a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('gallery_images') }}">Galeria</a>
+              </li>
             </ul>
           </div>
         </div>
@@ -41,12 +44,6 @@
             <div id="questionHelp" class="form-text">Me pergunte qualquer coisa!</div>
           </div>
         </form>
-    </div>
-
-    <div class="answerContainer d-flex justify-content-center align-items-center">
-        <div class="container">
-            <p id="answer">{{ answer }}</p>
-        </div>
     </div>
 {% endblock %}
 </html>
