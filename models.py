@@ -1,6 +1,9 @@
 import openai
+from datetime import datetime
+import urllib.request
+import os
 
-openai.api_key = "YOUR_API_KEY"
+openai.api_key = "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"
 def ask(question):
     completions = openai.Completion.create(
         engine="text-davinci-003",
@@ -16,4 +19,16 @@ def ask(question):
 
 def create_image(prompt):
     image_resp = openai.Image.create(prompt=prompt, n=4, size="512x512")
+    for image in image_resp['data']:
+        url = image['url']
+        filename = f"{str(datetime.now()).replace(' ', '').replace('.', '').replace(':', '')}.jpg"
+        folder = 'static/generated_images'
+        full_path = os.path.join(folder, filename)
+        urllib.request.urlretrieve(url, full_path)
     return image_resp
+
+def retrieve_images():
+    images = list()
+    for image in os.listdir('static/generated_images'):
+        images.append(image)
+    return images
