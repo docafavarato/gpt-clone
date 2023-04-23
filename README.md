@@ -1,7 +1,7 @@
 # GPT Clone
 
 ## About
-> A website made with flask and the OpenAi API. 
+> A website made with flask and the OpenAI API. 
 
 > Link: <a href="https://gptdoca.herokuapp.com/">GPT Clone</a>
 
