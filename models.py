@@ -22,7 +22,7 @@ def create_image(prompt):
     image_resp = openai.Image.create(prompt=prompt, n=4, size="512x512")
     for image in image_resp['data']:
         url = image['url']
-        filename = f"{str(datetime.now()).replace(' ', '').replace('.', '').replace(':', '')}name{prompt}.jpg"
+        filename = f"{str(datetime.now()).replace(' ', '').replace('.', '').replace(':', '')}nameofimage{prompt}.jpg"
         folder = 'static/generated_images'
         full_path = os.path.join(folder, filename)
         urllib.request.urlretrieve(url, full_path)
@@ -32,7 +32,7 @@ def retrieve_images():
     images = dict()
     for image in os.listdir('static/generated_images'):
         try:
-            images[image] = [image, image.split('name')[1].split('.jpg')[0]]
+            images[image] = [image, image.split('nameofimage')[1].split('.jpg')[0]]
         except:
             pass
         
