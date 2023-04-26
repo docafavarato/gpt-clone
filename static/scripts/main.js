@@ -16,9 +16,6 @@ $(document).ready(function() {
 $(document).ready(function() {
     $('body').on('click', '#clipboard', function(event) {
         event.stopPropagation(); 
-
-        console.log("Clicado!");
-
         var answerText = document.getElementById("answerText");
 
         navigator.clipboard.writeText(answerText.innerText)

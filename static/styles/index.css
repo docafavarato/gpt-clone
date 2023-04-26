@@ -94,4 +94,9 @@
 #clipboard {
     float: right;
     margin-top: 0.5rem;
+    transition-duration: 0.3s;
+}
+
+#clipboard:hover {
+    transform: rotate(25deg);
 }
