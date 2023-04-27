@@ -30,3 +30,9 @@ $(document).ready(function() {
         $(".alert").fadeIn("slow");
     });
 });
+
+$(document).ready(function() {
+    $("#create_image").click(function(e) {
+        $(".alert").fadeIn("slow");
+    });
+});

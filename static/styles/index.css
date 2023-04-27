@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,300&display=swap');
 
-
 .container {
     margin-top: 10vh;
 }
@@ -119,4 +118,22 @@
 
 #clipboard:hover {
     transform: rotate(25deg);
+}
+
+.custom-radio-label {
+	border-radius: 2rem;
+	height: 1.5rem;
+	width: 4.5rem;
+	font-size: .8rem;
+	line-height: 0.5rem;
+}
+
+.custom-radio:checked + .custom-radio-label {
+    background-color: #0D6EFD;
+    color: white;
+}
+
+.custom-radio + .custom-radio-label {
+    background-color: white;
+    color: black;
 }

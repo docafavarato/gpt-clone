@@ -11,9 +11,16 @@ def index():
 @app.route('/', methods=['POST'])
 def index_post():
     if request.method == 'POST':
+        match request.form['options']:
+            case "exato":
+                temperature = 0.3
+            case "padrao":
+                temperature = 0.5
+            case "criativo":
+                temperature = 0.8
         question = request.form.get('question')
-        answer = ask(question)
-        return render_template('answer.html', answer=answer)
+        answer = ask(question, temperature)
+        return render_template('answer.html', answer=answer) # 0.3: exato / 0.5: padrão / 0.8: criativo
     
 @app.route('/images')
 def index_images():
