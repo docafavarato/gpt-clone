@@ -36,17 +36,24 @@
       </nav>
 {% endblock %} 
 {% block footer %}
-    <div class="container">
+    <div class="container container-relative">
+		<div class="container d-flex justify-content-center align-items-center">
+			<div class="alert alert-light alert-fixed alert-small" role="alert" style="display: none;">
+				Pergunta enviada! Aguarde alguns segundos..
+				<button type="button" class="btn-close ms-auto" data-bs-dismiss="alert" aria-label="Close"></button>
+			</div>
+		</div>
         <form method="post" class="row">
           <div class="col-md-8 mx-auto mb-3">
             <label for="exampleInputEmail1" class="form-label col-md-2 label-grande">Sua pergunta</label>
             <div class="input-group col-md-6">
               <input type="text" class="form-control" id="question" name="question">
-              <button type="submit" class="btn btn-primary" onclick="dark()">Perguntar</button>
+              <button type="submit" class="btn btn-primary" id="ask">Perguntar</button>
             </div>
             <div id="questionHelp" class="form-text">Me pergunte qualquer coisa!</div>
           </div>
         </form>
     </div>
+
 {% endblock %}
 </html>

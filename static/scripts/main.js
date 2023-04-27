@@ -23,3 +23,10 @@ $(document).ready(function() {
             .catch(err => console.error("Erro ao copiar o texto: ", err));
     });
 });
+
+
+$(document).ready(function() {
+    $("#ask").click(function(e) {
+        $(".alert").fadeIn("slow");
+    });
+});

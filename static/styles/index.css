@@ -6,6 +6,26 @@
     margin-top: 10vh;
 }
 
+.container-relative {
+    position: relative;
+}
+
+.alert-fixed {
+    position: absolute;
+    width: 100%;
+}
+
+.alert-small {
+    height: 1rem;
+    margin-top: -1.7rem;
+    width: 25rem;
+}
+
+.alert {
+    display: flex;
+    align-items: center;
+}
+
 .label-grande {
     font-family: 'Poppins';
     font-size: 1.3rem;
