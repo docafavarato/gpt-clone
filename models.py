@@ -5,14 +5,14 @@ from flask import escape
 import os
 
 openai.api_key = "YOUR_API_KEY"
-def ask(question):
+def ask(question, temperature):
     completions = openai.Completion.create(
         engine="text-davinci-003",
         prompt=question,
         max_tokens=1024,
         n=1,
         stop=None,
-        temperature=0.5,
+        temperature=temperature,
 )
 
     message = str(escape(completions['choices'][0]['text'])).replace("\n", "<br/>")
@@ -37,3 +37,4 @@ def retrieve_images():
             pass
         
     return images
+
