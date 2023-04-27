@@ -2,12 +2,11 @@
 {% block body %}
 {{ super() }}
 <div class="answerContainer d-flex justify-content-center align-items-center">
-    <div class="container-answer container" id="answerText">
+    <div class="container-answer container" id="answerText" style="white-space: pre-wrap;">
         <i class="fa-regular fa-clipboard" id="clipboard"></i>
-            {% for line in answer.split('\n') %}
-                {{ line }}
-                <br/>
-            {% endfor %}
+        {%- for line in answer.split('\n') -%}
+            {{ line }}
+        {%- endfor -%}
     </div>
 </div>
 {% endblock %}

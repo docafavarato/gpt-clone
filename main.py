@@ -1,8 +1,10 @@
 from flask import Flask, render_template, request, url_for
 from models import ask, create_image, retrieve_images
+from jinja2 import Environment, FileSystemLoader
 
 app = Flask(__name__)
 app.jinja_env.autoescape = False
+env = Environment(loader=FileSystemLoader('templates'), trim_blocks=True)
 
 @app.route('/')
 def index():
@@ -12,15 +14,15 @@ def index():
 def index_post():
     if request.method == 'POST':
         match request.form['options']:
-            case "exato":
-                temperature = 0.3
+            case "direta":
+                temperature = 0.2
             case "padrao":
                 temperature = 0.5
-            case "criativo":
-                temperature = 0.8
+            case "criativa":
+                temperature = 0.9
         question = request.form.get('question')
-        answer = ask(question, temperature)
-        return render_template('answer.html', answer=answer) # 0.3: exato / 0.5: padrão / 0.8: criativo
+        answer = ask(question=question, temperature=temperature)
+        return render_template('answer.html', answer=answer) # 0.2: exato / 0.5: padrão / 0.9: criativo
     
 @app.route('/images')
 def index_images():

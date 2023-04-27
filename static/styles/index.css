@@ -112,7 +112,7 @@
 
 #clipboard {
     float: right;
-    margin-top: 0.5rem;
+    margin-top: -1rem;
     transition-duration: 0.3s;
 }
 
