@@ -13,10 +13,14 @@ def ask(question, temperature):
         n=1,
         stop=None,
         temperature=temperature,
-)
-
-    message = str(escape(completions['choices'][0]['text'])).replace("\n", "<br/>")
-    return message
+    )
+    message = str(completions['choices'][0]['text']).replace("\n", "<br/>")
+    match message[:10]:
+        case "<br/><br/>":
+            better = message[10:].lstrip()
+        case _:
+            better = message
+    return better
 
 def create_image(prompt):
     image_resp = openai.Image.create(prompt=prompt, n=4, size="512x512")
@@ -37,4 +41,3 @@ def retrieve_images():
             pass
         
     return images
-
