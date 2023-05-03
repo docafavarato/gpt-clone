@@ -1,10 +1,10 @@
 import openai
 from datetime import datetime
 import urllib.request
-from flask import escape
+import json
 import os
 
-openai.api_key = "YOUR_API_KEY"
+openai.api_key = "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"
 def ask(question, temperature):
     completions = openai.Completion.create(
         engine="text-davinci-003",
@@ -25,19 +25,22 @@ def ask(question, temperature):
 def create_image(prompt):
     image_resp = openai.Image.create(prompt=prompt, n=4, size="512x512")
     for image in image_resp['data']:
-        url = image['url']
-        filename = f"{str(datetime.now()).replace(' ', '').replace('.', '').replace(':', '')}nameofimage{prompt}.jpg"
-        folder = 'static/generated_images'
-        full_path = os.path.join(folder, filename)
-        urllib.request.urlretrieve(url, full_path)
+        with open('static/generated_images/images.json', 'r+') as file:
+            data = json.load(file)
+            data["images"][image["url"]] = prompt
+        with open('static/generated_images/images.json', 'w') as file:
+            json.dump(data, file)
+
     return image_resp
 
 def retrieve_images():
     images = dict()
-    for image in os.listdir('static/generated_images'):
-        try:
-            images[image] = [image, image.split('nameofimage')[1].split('.jpg')[0]]
-        except:
-            pass
+    with open('static/generated_images/images.json', 'r') as file:
+        data = json.load(file)
+        for image in data["images"]:
+            try:
+                images[image] = data["images"][image]
+            except:
+                pass
         
     return images
