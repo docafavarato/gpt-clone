@@ -6,10 +6,10 @@
             {% for image in images %}
                 <div class="col-md-3">
                     <div class="image-container">
-                        <a href="static/generated_images/{{ images[image][0] }}">
-                            <img src="static/generated_images/{{ images[image][0] }}" class="img-fluid image" alt="{{ images[image][1] }}">
+                        <a href="{{ image }}">
+                            <img src="{{ image }}" class="img-fluid image" alt="{{ images[image] }}">
                             <div class="overlay">
-                                <div class="text">"{{ images[image][1] }}"</div>
+                                <div class="text">"{{ images[image] }}"</div>
                             </div>
                         </a>
                     </div>
