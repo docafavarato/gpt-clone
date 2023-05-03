@@ -4,7 +4,7 @@ import urllib.request
 import json
 import os
 
-openai.api_key = "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"
+openai.api_key = ""
 def ask(question, temperature):
     completions = openai.Completion.create(
         engine="text-davinci-003",
