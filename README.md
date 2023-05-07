@@ -3,7 +3,7 @@
 ## About
 > A website made with flask and the OpenAI API. 
 
-> Link: <a href="https://gptdoca.herokuapp.com/">GPT Clone</a>
+> Link: <a href="http://docaf.pythonanywhere.com/">GPT Clone</a>
 
 ## Usage
 > Use the index page to ask anything to GPT. 
