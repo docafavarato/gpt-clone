@@ -6,7 +6,7 @@
 > Link: <a href="http://docaf.pythonanywhere.com/">GPT Clone</a>
 
 ## Usage
-> Use the index page to ask anything to GPT. 
+> Use the index page to ask anything to the AI. 
 
 > Use the images page to generate 4 images at a time with a description.
 
